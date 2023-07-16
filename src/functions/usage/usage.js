@@ -3,3 +3,4 @@ function projectUsage(toEmbedCpuUsage) {
 	const estimatedMemoryUsage = Math.round(rawMemoryUsage * 100) / 100
 	return `\nCPU usage: ${Math.round(toEmbedCpuUsage * 100) /100 }%\nMemory: ${estimatedMemoryUsage}`
 }
+module.exports = { projectUsage }

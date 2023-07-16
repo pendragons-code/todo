@@ -1,6 +1,7 @@
 const { EmbedBuilder } = require("discord.js")
 const { cpuUsage } = require("os-utils")
 const { Default, BotConfig } = require("../../../../config.json")
+const { projectUsage } = require("../../../functions/usage/usage.js")
 module.exports = {
 	name: "usage",
 	aliases: ["-u"],
