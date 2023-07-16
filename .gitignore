@@ -1,0 +1,7 @@
+.env
+.env.production
+node_modules
+package-lock.json
+errorfile.txt
+logfile.txt
+database.sqlite

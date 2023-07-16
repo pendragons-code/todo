@@ -1,0 +1,19 @@
+{
+	"BotConfig": {
+		"BotID": "875419076682473493",
+		"BotOwnerID": "875324148874895400",
+		"BotSite": "https://pendragonscode.xyz"
+	},
+	"Default": {
+		"DefaultPrefix": "!",
+		"DefaultEmbedColor": "#0099ff",
+		"DefaultFooterText": "Pen Pen is a retard!"
+	},
+	"adless-servers": [],
+	"Decoration": {
+		"Title": {
+			"first": "˜”°•.˜”°•--==++",
+			"second": "++==-- •°”˜.•°”˜"
+		}
+	}
+}
