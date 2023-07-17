@@ -40,6 +40,7 @@ module.exports = {
 			case "add":
 				if(currentSetOfTODOs !== null && currentSetOfTODOs.length === 29) return messageCreate.channel.send("You have reached the maximum number of tasks.") // I may add a pagination system sometime soon.
 				if(currentSetOfTODOs !== null && currentSetOfTODOs.join("v").replace(" ", "v").length + args.slice(1).join("v").length > 2000) return messageCreate.channel.send("Adding this task exceeds the 2000 characted limit!")
+				if(args.includes("```")) return messageCreate.channel.send("We do not support backticks as it will break the embed format!")
 				// im too stupid and i did this because the thing would just crash if you query for something that is null, so i run a check first
 				await db.push(`todos_${messageCreate.author.id}`, args.slice(1).join(" "))
 				.catch((error) => {
