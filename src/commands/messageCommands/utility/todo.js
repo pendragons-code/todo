@@ -21,7 +21,11 @@ module.exports = {
 		if(!isNaN(args[1])) firstArgumentAsInt = parseInt(args[1]) //so it does not try to parse int from "all"
 		switch(args[0]) {
 			// Honestly can do this better, will get around to it one day
-
+			case "reset":
+				if(args[1] != "all") return messageCreate.channel.send("You did not confirm that you want to reset, remember to do reset all!")
+				await db.delete(`todos_${messageCreate.channel.send}`)
+				messageCreate.channel.send("Reset complete!")
+				break
 			case "show":
 				if(numberOfTodos < 1) return messageCreate.channel.send("You do not have any ToDos!")
 				if(args[1] === "all"){
