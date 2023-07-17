@@ -23,7 +23,7 @@ module.exports = {
 			// Honestly can do this better, will get around to it one day
 			case "reset":
 				if(args[1] != "all") return messageCreate.channel.send("You did not confirm that you want to reset, remember to do reset all!")
-				await db.delete(`todos_${messageCreate.channel.send}`)
+				await db.delete(`todos_${messageCreate.author.id}`)
 				messageCreate.channel.send("Reset complete!")
 				break
 			case "show":
