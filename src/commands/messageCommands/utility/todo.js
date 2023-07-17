@@ -63,7 +63,7 @@ module.exports = {
 				if(isNaN(args[1])) return messageCreate.channel.send(reject.UserFault.numbers.invalid)
 				if(numberOfTodos === null || numberOfTodos < 1) return messageCreate.channel.send("You do not have any ToDos!")
 				if(numberOfTodos < firstArgumentAsInt || firstArgumentAsInt < 1) return messageCreate.channel.send(reject.UserFault.numbers.notInRange)
-				await db.pull(`todos_${messageCreate.author.id}`, currentSetOfTODOs[number - 1])
+				await db.pull(`todos_${messageCreate.author.id}`, currentSetOfTODOs[args[1] - 1])
 				.catch((error) => {
 					console.error(error)
 					console.log(messageCreate.content)
