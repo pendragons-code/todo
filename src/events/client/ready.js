@@ -7,7 +7,7 @@ module.exports = async (bot) => {
 		console.log(`Status and uptime:\nLogged in as ${bot.user.tag}\n\nReady on ${bot.guilds.cache.size} servers and helping about ${bot.users.cache.size} users!\n\nHardware report: ${estimatedMemoryUsage} MB and ${Math.round(cpuUsageDetails * 100) / 100}% cpu`)
 	})
 	if(editmode === "on") bot.user.setActivty("Editmode is on!")
-	bot.user.setActivity("Use 'jas help' for commands!")
+	bot.user.setActivity("Use '!help' for commands!")
 	console.log(`\n\n List of guilds with bot!`)
 	bot.guilds.cache.map(guild => {
 		console.log(guild.name)
