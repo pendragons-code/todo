@@ -8,12 +8,12 @@ module.exports = {
 	utilisation: "clear <amt>\n note that amt does not include the message you are sending, it will +1. Also if the number provided is not an interger, it will parse it out!",
 	minPerms: [PermissionsBitField.Flags.KickMembers, PermissionsBitField.Flags.BanMembers],
 	async execute(messageCreate, args, prefix) {
-		if(!args[1]) return messageCreate.channel.send(reject.UserFault.numbers.missing)
-		if(isNaN(args[1])) return messageCreate.channel.send(reject.UserFault.numbers.invalid)
-		let amtOfMessagesToDelete = parseInt(args[1])
-		if(args[1] > 100 || amtOfMessagesToDelete < 1) return messageCreate.channel.send(reject.UserFault.numbers.invalid)
+		if(!args[0]) return messageCreate.channel.send(reject.UserFault.numbers.missing)
+		if(isNaN(args[0])) return messageCreate.channel.send(reject.UserFault.numbers.invalid)
+		let amtOfMessagesToDelete = parseInt(args[0])
+		if(args[0] > 100 || amtOfMessagesToDelete < 1) return messageCreate.channel.send(reject.UserFault.numbers.invalid)
 		messageCreate.delete()
-		messageCreate.channel.bulkDelete()
+		messageCreate.channel.bulkDelete(args[0])
 		.catch((error) => {
 			console.log(error)
 			console.error(error)
